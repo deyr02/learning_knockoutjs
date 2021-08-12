@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dog Walk (Knockout.js)</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <script type='text/javascript'
+        src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+</head>
+
+<body>
+    <div id="knockout-app" class="card">
+        <header>
+            Good Dog Walks Inc.
+        </header>
+        <div class="card-section">
+            <h2>Hello, <span data-bind="text: userName"></span></h2>
+            <p>How many walks will we take today?</p>
+            <div class="counter-ui-container">
+                <button data-bind="click: decrease">-</button>
+                <span class="counter" data-bind="text: count">0</span>
+                <button data-bind="click: increase">+</button>
+            </div>
+            <p>
+                Your dog is <span data-bind="text: dogStatus"></span>
+            </p>
+        </div>
+        <footer>
+            <span>Have a tail wagging day!</span>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src='myscript.js'></script>
+
+</body>
+
+</html>
