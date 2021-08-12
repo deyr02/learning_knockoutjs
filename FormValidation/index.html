@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dog Walk (Knockout.js)</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <script type='text/javascript'
+        src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+        
+
+    <script type='text/javascript'
+        src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.4/knockout.validation.min.js"></script>
+        
+</head>
+
+<body>
+    <div id="knockout-app" class="card">
+        <header>
+            Good Dog Walks Inc.
+        </header>
+    
+        <div class="card-section" style="display:none;" data-bind="visible: hasBeenSubmitted">
+            <h2>Thank you for submitting the form!</h2>
+            <p>Please check your email for a confirmation link.</p>
+        </div>
+    
+        <div class="card-section" data-bind="visible: !hasBeenSubmitted()">
+            <h2>Create Account</h2>
+            <p>Enter your name and details to get that tail wagging</p>
+            <form data-bind="submit: handleSubmit">
+                <div class="field">
+                    <label for="first-name">First Name*</label>
+                    <input data-bind="value: firstName, css: { error: firstName.error() && firstName.isModified() }"
+                        id="first-name" type="text" />
+                </div>
+                <div class="field">
+                    <label for="email">Email Address*</label>
+                    <input
+                        data-bind="value: emailAddress, css: { error: emailAddress.error() && emailAddress.isModified() }"
+                        placeholder="you@mail.com" id="email" type="text" />
+                </div>
+                <div class="field">
+                    <label for="subscription">Subscription*</label>
+                    <div class="select-container">
+                        <select id="subscription" data-bind="value: subscriptionType">
+                            <option value="standard">Standard</option>
+                            <option value="pro">Pro</option>
+                            <option value="superPro">Super Pro</option>
+                        </select>
+                        <svg class="select_arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30"
+                            viewBox="0 0 768 768">
+                            <path fill="#222" d="M223.5 319.5h321l-160.5 160.5z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <input type="submit" value="Continue">
+            </form>
+        </div>
+        <footer>
+            <span>Have a tail wagging day!</span>
+        </footer>
+    </div>
+    <script type="text/javascript" src='myscript.js'></script>
+
+</body>
+
+</html>
